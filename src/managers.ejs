@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+		<meta charset="utf-8">
+    <title><%=title%></title>
+    <link rel="icon" type="image/ico" href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQnYJvin0M0pdJ9xi7AdFZTNGUhjQ2ISOdoZsUBE_JfWSix4GX5">
+    <meta name="generator" content="Bootply" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+		<link href="css/bootstrap.min.css" rel="stylesheet">
+		<link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.min.css" rel="stylesheet">
+		<link href="css/styles.css" rel="stylesheet">
+	</head>
+	<body>
+<header class="navbar navbar-bright navbar-fixed-top" role="banner">
+  <div class="container">
+    <div class="navbar-header">
+      <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".navbar-collapse">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a href="/" class="navbar-brand">Home</a>
+    </div>
+    <nav class="collapse navbar-collapse" role="navigation">
+            
+            
+                    <ul class="nav navbar-nav">
+                         <li>
+                             <% for(var i=0; i<nav.length; i++) {%>
+                                
+                                 <li><a href='<%=nav[i].link%>'><%=nav[i].title%> </a></li>
+                                
+                              <% } %>
+                       </ul>
+
+
+     
+
+      <ul class="nav navbar-right navbar-nav">
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="glyphicon glyphicon-search"></i></a>
+          <ul class="dropdown-menu" style="padding:12px;">
+            <form class="form-inline">
+              <button type="submit" class="btn btn-default pull-right"><i class="glyphicon glyphicon-search"></i></button><input type="text" class="form-control pull-left" placeholder="Search">
+            </form>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<div id="masthead">  
+  <div class="container">
+    <div class="row">
+      <div class="col-md-7">
+        <h1><%=title%>
+          <p class="lead"></p>
+        </h1>
+      </div>
+      <div class="col-md-5">
+        <div class="well well-lg"> 
+          <div class="row">
+            <div class="col-sm-12">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div> 
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="top-spacer"> </div>
+      </div>
+    </div> 
+  </div>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="col-md-12"> 
+      <div class="panel">
+        <div class="panel-body">
+            <% for(var i=0; i<managers.length; i++) {%>
+          <div class="row">    
+            <br>
+            <div class="col-md-2 col-sm-3 text-center">
+              <a class="story-title" href="#"><img alt="" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTgZdsAX0A72vRzWruHUorqUivw-s_Y82x2GAr63ZiGJBZzis4q" style="width:100px;height:100px" class="img-circle"></a>
+            </div>
+            <div class="col-md-10 col-sm-9">
+              <h3><a href="#" class="text-muted"><%=managers[i].manager_name%>  <%=managers[i].manager_sname%></a></h3>
+              <div class="row">
+                <div class="col-xs-9">
+                  <h4><span class="label label-default"><%=managers[i].house_name%></span></h4><h4>
+                  <small style="font-family:courier,'new courier';" class="text-muted">Phone No : <%=managers[i].phone_no%><a href="/managers/<%=managers[i]._id%>" class="text-muted"> <br>Manager id :<%=managers[i]._id%></small>
+                  </h4></div>
+                <div class="col-xs-3"></div>
+                  <form method="POST" action="/managers/editmanager/<%=managers[i]._id %>" style="float:right">
+                    <input class="btn-primary"  type="submit" name="delete" value='Update' onClick="return confirm('Are you sure you want to update?')" />
+                    <input type="hidden" name="_method" value="UPDATE" />
+                  </form>
+                    <br><br>
+                    <form method="POST" action="/managers/<%=managers[i]._id %>/delete" style="float:right">
+                      <input class="btn-danger" type="submit" name="delete" value='Delete' onClick="return confirm('Are you sure you want to delete?')" />
+                      <input type="hidden" name="_method" value="DELETE" />
+                    </form>
+              </div>
+              <br><br>
+            </div>
+          </div>
+          <hr>
+           <% } %>
+        </div>
+      </div>                                               
+     </div>
+     
+  </div>
+</div>                                                                           
+<hr>
+</footer>
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
+		<script src="js/bootstrap.min.js"></script>
+	</body>
+</html>

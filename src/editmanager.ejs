@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<title><%=title%></title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+body {font-family: "Lato", sans-serif}
+.mySlides {display: none}
+</style>
+<body>
+<div class="w3-top">
+  <div class="w3-bar w3-indigo w3-card">
+    <a class="w3-bar-item w3-button w3-padding-large w3-hide-medium w3-hide-large w3-right" href="javascript:void(0)" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
+    <a href="/" class="w3-bar-item w3-button w3-padding-large">HOME</a>
+    <a href="/managers" class="w3-bar-item w3-button w3-padding-large w3-hide-small">MANAGERS</a>
+    <a href="/players" class="w3-bar-item w3-button w3-padding-large w3-hide-small">PLAYERS</a>
+    <a href="/addplayer" class="w3-bar-item w3-button w3-padding-large w3-hide-small">ADD PLAYER</a>
+    <a href="/managerau" class="w3-bar-item w3-button w3-padding-large w3-hide-small">ADD MANAGER</a>
+    
+    <a href="javascript:void(0)" class="w3-padding-large w3-hover-red w3-hide-small w3-right"><i class="fa fa-search"></i></a>
+  </div>
+</div>
+ <div class="w3-container w3-content w3-center w3-padding-64" style="max-width:800px" id="band">
+  <h2 class="w3-wide">UPDATE</h2>
+  <p class="w3-opacity"><i>Updating..</i></p>
+<div class="row">    
+  <br>
+  <div class="col-md-2 col-sm-3 text-center">
+    <a class="story-title" href="#"><img alt="" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTgZdsAX0A72vRzWruHUorqUivw-s_Y82x2GAr63ZiGJBZzis4q" style="width:100px;height:100px" class="img-circle"></a>
+  </div>
+  </div>
+
+  <div style="padding-left: 35%;" class="row"> 
+  <form action="editing/<%=id %>" method="POST" name="form1" >
+    <table width="25%">
+      <div class="card text-white bg-info mb-3" style="margin-left: 20px;margin-right: 870px;border-radius: 10% ">
+      <div class="input-container">
+        <i class="fa fa-user icon"></i>
+        <input style="margin-left:15px;" class="input-field" value="<%=manager_name%>" type="text" name="manager_name">
+      </div>
+    
+      <div class="input-container">
+        <i class="fa fa-envelope icon"></i>
+        <input style="margin-left:15px;" class="input-field" value="<%=manager_sname%>" type="text" name="manager_sname">
+      </div>
+
+      <div class="input-container">
+              <i class="fa fa-envelope icon"></i>
+              <input style="margin-left:15px;" class="input-field" value="<%=phone_no%>" type="text"  name="phone_no">
+            </div>
+    
+      <div class="input-container">
+        <i class="fa fa-key icon"></i>
+        <input style="margin-left:15px;" class="input-field" value="<%=house_name%>" type="type"  name="house_name">
+      </div>
+      <br>
+      <button style="margin-left:15px;margin-bottom:15px" class="btn-primary" type="submit" name="Submit" value="editmanager" class="btn btn-primary">UPDATE</button>
+  </div>
+  </table>
+  <input type="hidden" name="_method" value="PUT" />
+    </form> 
+  </div>
+ </div>
+<hr>
+</div>
+</body>
+</html>
